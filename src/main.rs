@@ -92,6 +92,12 @@ fn sync_file(source: &Path, target: &Path) -> io::Result<()> {
 
         fs::copy(source, target)?;
         println!("完成");
+    } else {
+        println!(
+            "不需要同步文件: {} <-> {}...",
+            source.display(),
+            target.display()
+        );
     }
 
     Ok(())
